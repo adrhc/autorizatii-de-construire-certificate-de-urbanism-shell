@@ -20,13 +20,13 @@ public class IndexSearchCommands {
 
     @ShellMethod(value = "Search the index.")
     public void search(String words) throws IOException {
-        showMatches(words, searcher.search(words));
+        showMatches(words, searcher.searchWithSmallMistakes(words));
     }
 
     @ShellMethod(value = "Update then search the index.")
     public void searchLastUpdate(String words) throws IOException {
         indexManager.updateIndex();
         log.info("\nIndex updated!");
-        showMatches(words, searcher.search(words));
+        showMatches(words, searcher.searchWithSmallMistakes(words));
     }
 }
