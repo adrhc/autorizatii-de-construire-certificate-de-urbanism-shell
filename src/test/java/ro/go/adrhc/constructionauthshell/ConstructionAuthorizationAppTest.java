@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.shell.Shell;
 
-@SpringBootTest
+@SpringBootTest(properties = "index.readonly=true")
 @ExcludeShellAutoConfiguration
 @MockBean(classes = {Shell.class})
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
